@@ -13,7 +13,7 @@ class Studente {
     isMaggior() {
         esito = false;
 
-        if(eta>=18) {
+        if (eta >= 18) {
             esito = true;
         }
 
@@ -21,7 +21,7 @@ class Studente {
     }
 
     toString() {
-        return "Nome: " + this.nome + "\nCognome: " + this.cognome + "\nEta: " + this.eta + "\nMatricola: " + this.matricola;
+        return "Nome: " + this.nome + "<br>Cognome: " + this.cognome + "<br>Eta: " + this.eta + "<br>Matricola: " + this.matricola;
     }
 }
 
@@ -41,6 +41,14 @@ function popolaSelect() {
         option.text = studenteTemp.nome + ' ' + studenteTemp.cognome;
         select.add(option);
     });
+}
+
+function infoStud() {
+    const select = document.getElementById("selectStud");
+
+    indiceSelect = select.selectedIndex;
+
+    document.getElementById("infoStudente").innerHTML = studenti[indiceSelect].toString();
 }
 
 let studenti = [];
